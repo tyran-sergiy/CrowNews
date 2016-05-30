@@ -16,5 +16,26 @@ class SiteController {
         return true;
         
     }
-  
+    
+    /**
+     * Method which is called at the "/search/"  address
+     * 
+     */
+    public function actionSearch() {
+        
+        
+        if(isset($_POST['searchString'])){
+            $searchString = $_POST['searchString'];
+            
+            $searchNews = News::searchNews($searchString);
+            
+        }
+        
+    include_once 'views/site/search.php';
+
+
+         return true;
+    
+    
+}
 }
