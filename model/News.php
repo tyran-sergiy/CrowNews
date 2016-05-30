@@ -48,6 +48,66 @@ class News {
     }
     
     
+    /**
+     * 
+     * get news for current page
+     * 
+     * @param int $page current page number
+     * @return array news array in current page
+     */
+    public static function getNews($page = 1) {
+        $limit = self::SHOW_NEWS_ON_PAGE;
+        
+        $db = Db::getConnection();
+         $offset=($page-1)*  $limit;
+         
+        $sql = "SELECT id, title, short_content, image, date "
+                . "FROM news "
+                . "ORDER BY id DESC "
+                . "LIMIT :count "
+                . "OFFSET :offset";
+        
+        $result = $db->prepare($sql);
+        
+        $result->bindParam(':count', $limit, PDO::PARAM_INT);
+        $result->bindParam(':offset', $offset,  PDO::PARAM_INT);
+        
+        $result->execute();
+        
+        $news = array();
+        $i = 0;
+        
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)){
+            
+            $news[$i]['id'] = $row['id'];
+            $news[$i]['title'] = $row['title'];
+            $news[$i]['short_content'] = $row['short_content'];
+            $news[$i]['image'] = $row['image'];
+            $news[$i]['date'] = $row['date'];
+            $i++;
+            
+        }
+        
+        
+        return $news;
+    }
+    
+    
+    /**
+     * get news count
+     * @return int all news count
+     */
+    public static function countNews(){
+        
+        
+        $db = Db::getConnection();
+        
+     $count =  $db->query("SELECT COUNT(id) as count from news");
+        
+        
+     return $count->fetch()['count'];
+    }
+    
     
     /**
      * Get news that match for pattern
@@ -83,7 +143,6 @@ class News {
        }
        return $searchNews;
     }
-    
-  
+
     
 }
