@@ -70,7 +70,7 @@
             
                     </div>
                     
-                        <footer class="footer col-xs-12 col-md-12">
+                    <footer class="footer col-xs-12 col-md-12" style="border-top:1px solid grey; padding-top:20px;">
       <div class="container text-center">
           
           <p>Please contact <a href='mailto: Tyran.sr@outlook.com'>Tyran.sr@outlook.com</a>

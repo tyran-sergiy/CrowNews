@@ -28,11 +28,13 @@ $contentClose = '</div>';
 
 
 
-    $content = ($contentOpen.$contentMain.$contentClose);
-if (isset($_POST['ajax']) ) {
+    $content = ($contentOpen.$contentMain.$contentClose); // this content for our page
+    
+if (isset($_POST['ajax']) ) {  /** if we send request from already loaded page, we only send response to js with page content variable.
+                                  And js insert it into existing page**/
     echo "$content";
     
-}else{
+}else{  // else we load page first time and we include page layout, where variable with page content insert.
 
     include_once 'views/layouts/searchLayout.php';
     

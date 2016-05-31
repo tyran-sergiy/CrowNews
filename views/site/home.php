@@ -64,16 +64,24 @@
             
                     </div>
                     
-                        <footer class="footer col-xs-12 col-md-12">
-      <div class="container text-center">
-          
+                    
+                         <footer class="footer col-xs-12 col-md-12">
+      
+          <div class="container text-center">
           <p>Please contact <a href='mailto: Tyran.sr@outlook.com'>Tyran.sr@outlook.com</a>
 with your questions, comments, and suggestions</p>
+         
+            
+          
         <p>Copyright © Tyran Sergiy. All rights reserved.</p>
-      </div>
+          </div>
+    
     </footer>
+                    
+            
                 </div>
                 
+                       
             
                 
             </div>

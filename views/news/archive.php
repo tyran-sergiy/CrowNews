@@ -44,10 +44,13 @@ $contentClose = $paginationHTML.'</div>' ;
 
 $content = ($contentOpen.$contentMain.$contentClose);
 
-if (isset($_POST['ajax'])) {  // if we come to this page frow another page and main layout is alredy include, we just change our content
+if (isset($_POST['ajax']) ) {  /** if we send request from already loaded page, we only send response to js with page content variable.
+                                  And js insert it into existing page**/
+    echo "$content";
     
-    echo $content;
-} else { // if we come to our page witout any links or reload current page, we include our main layout and paste our content there
+}else{  // else we load page first time and we include page layout, where variable with page content insert.
+
+    include_once 'views/layouts/archiveLayout.php';
     
-     include_once 'views/layouts/archiveLayout.php';
+  
 }
