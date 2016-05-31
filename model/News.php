@@ -19,7 +19,8 @@ class News {
         $count = self::SHOW_NEWS_ON_PAGE;
         $db=Db::getConnection();
         
-        $sql = "SELECT id, title, short_content, image, date "
+        $sql = "SELECT id, title, short_content, image, "
+                . "UNIX_TIMESTAMP(date) AS date "
                 . "FROM news "
                 . "ORDER BY id "
                 . "DESC LIMIT :count";
@@ -61,7 +62,8 @@ class News {
         $db = Db::getConnection();
          $offset=($page-1)*  $limit;
          
-        $sql = "SELECT id, title, short_content, image, date "
+        $sql = "SELECT id, title, short_content, image, "
+                . "UNIX_TIMESTAMP(date) AS date "
                 . "FROM news "
                 . "ORDER BY id DESC "
                 . "LIMIT :count "
@@ -119,7 +121,8 @@ class News {
         
         $db = Db::getConnection();
         
-       $result = $db->prepare("SELECT id, title, short_content, image, date "
+       $result = $db->prepare("SELECT id, title, short_content, image, "
+               . "UNIX_TIMESTAMP(date) AS date "
                . "FROM news "
                . "WHERE title LIKE '%$searchString%' "
                . "OR "
@@ -143,6 +146,26 @@ class News {
        }
        return $searchNews;
     }
-
+    
+    /**
+     * get data for single news by id
+     * 
+     * @param int $id
+     * @return array single news
+     */
+    public static function getNewsById($id) {
+        
+        $db = Db::getConnection();
+        
+       $result = $db->prepare("SELECT text, title, image, "
+               . "UNIX_TIMESTAMP(date) AS date"
+               . " FROM news "
+               . " WHERE id = $id");
+       
+       $result->execute();
+       
+       return $result->fetch(PDO::FETCH_ASSOC);
+        
+    }
     
 }
