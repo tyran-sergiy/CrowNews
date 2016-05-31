@@ -21,7 +21,6 @@
                 });
                     
                 
-         setCurrentNavtab();
                 
                 
                 }
