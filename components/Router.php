@@ -66,10 +66,8 @@ class Router {
             
             $controllerObject= new $controllerName; //create controller object
                  
-         //   ini_set('display_errors','Off');// wrong uri cause error here and $result equals NULL. 
             $result=call_user_func_array(array($controllerObject ,$actionName),$params); // call the desire controller and action
-            ini_set('display_errors','On');
-         
+        
                
             if($result==NULL){ // if $result equals NULL user type wrong uri and we have error in the code above
                 

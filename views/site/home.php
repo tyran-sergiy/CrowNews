@@ -1,27 +1,9 @@
-<!doctype html>
-<html>
-    <head>
-        <link rel="shortcut icon" href="/template/favicon.png" type="image/x-icon">
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700' />
-        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' />
-        <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-        <link rel='stylesheet' href='/template/css/style.css' />
-        <title>CrowNews</title>
-    </head>
-    <body>
-        <header class="header">
+<?php include_once ROOT.'/views/layouts/header.php'; ?>
+
+
+
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12">
-                      
-                        
-              <h1><span class="green">Crow</span>News</h1>
-              
-                </div>
-                
-            </div>
-                
-                <div class="col-sm-12 col-md-12 head-nav">
+               <div class="col-sm-12 col-md-12 head-nav">
    <ul class="nav nav-tabs">
        <li role="presentation" class="active"><a href="/">Home</a></li>
   <li role="presentation"><a href="/search/">Search</a></li>
@@ -29,7 +11,6 @@
 </ul>    
                     </div>
             </div>
-        </header>
         <div class="main">
             <div class="container">
                 <div class="row hr-sides">
