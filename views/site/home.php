@@ -1,40 +1,96 @@
-<?php
+<!doctype html>
+<html>
+    <head>
+        <link rel="shortcut icon" href="/template/favicon.png" type="image/x-icon">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700' />
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' />
+        <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+        <link rel='stylesheet' href='/template/css/style.css' />
+        <title>CrowNews</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                      
+                        
+              <h1><span class="green">Crow</span>News</h1>
+              
+                </div>
+                
+            </div>
+                
+                <div class="col-sm-12 col-md-12 head-nav">
+   <ul class="nav nav-tabs">
+       <li role="presentation" class="active"><a href="/">Home</a></li>
+  <li role="presentation"><a href="/search/">Search</a></li>
+  <li role="presentation"><a href="/news/page/1">Archive   </a></li>
+</ul>    
+                    </div>
+            </div>
+        </header>
+        <div class="main">
+            <div class="container">
+                <div class="row hr-sides">
 
-$contentOpen = '
-    
-       <div class="row news">
+                   
+                    <div class="col-sm-12 col-md-12" id="content">
+                        
+                            
+<div class="row news">
 <div class="col-sm-12 col-md-12 text-center">
 <h3 class="content-title">Recent news</h3>
 </div>   
-';
-
-$contentMain = '';
-foreach ($recentNews as $newsItem){
-    
-$contentMain = $contentMain."
-    <div class='newsItem col-sm-12 col-md-12'>
+             <?php   foreach ($recentNews as $newsItem): ?>
+                   <div class='newsItem col-sm-12 col-md-12'>
                                   <div class='row'>
                                   <div class='col-sm-4 col-md-4'>
-                                 <img src='{$newsItem['image']}' class='img-thumbnail' alt='{$newsItem['title']}'>
+                                 <img src=' <?php echo $newsItem['image'] ;?>' class='img-thumbnail' alt=' <?php $newsItem['title'] ?>'>
                             </div>
                                     <div class='caption col-sm-8 col-md-8'>
-        <h3>{$newsItem['title']}</h3>
-        <p>{$newsItem['short_content']} </p>
-        <p><a href='/news/{$newsItem['id']}/'class='btn btn-primary single-news' role='button'>More...</a></p>
+        <h3> <?php echo $newsItem['title'] ?></h3>
+        <h5 class="date"> <?php  echo date( 'g:ia F/j/Y',$newsItem['date'] );?></h5>
+        <p> <?php  echo $newsItem['short_content'] ?> </p>
+        <p><a href='/news/<?php echo $newsItem['id'];?>/'class='btn btn-primary single-news' role='button'>More...</a></p>
       </div>
                                       </div>
-                                </div>";
-}
+                                </div>
+    <?php endforeach; ?>
+</div>
+                            
+                        
 
-$contentClose = '
-    
-   </div>';
+            
+                    </div>
+                    
+                        <footer class="footer col-xs-12 col-md-12">
+      <div class="container text-center">
+          
+          <p>Please contact <a href='mailto: Tyran.sr@outlook.com'>Tyran.sr@outlook.com</a>
+with your questions, comments, and suggestions</p>
+        <p>Copyright © Tyran Sergiy. All rights reserved.</p>
+      </div>
+    </footer>
+                </div>
+                
+            
+                
+            </div>
 
-$content = ($contentOpen.$contentMain.$contentClose);
-if (isset($_POST['ajax'])) {
-    
-    echo "$content ";
-} else {
-    
-     include_once 'views/layouts/mainLayout.php';
-}
+                
+
+            </div>
+        
+
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+        <script src="/template/js/curl_hover.js"></script>
+      
+        <script>
+        $(document).ready(function() {
+
+        });
+    </script>
+    </body>
+</html>
+
