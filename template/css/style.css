@@ -2,6 +2,13 @@ html, body {
     font-family: 'Montserrat', sans-serif;
  
 }
+h1 {
+   
+    font-size: 48px;
+    font-weight: 400;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
 html{
      overflow-y: scroll;
 }
@@ -32,10 +39,6 @@ footer{
 .btn.btn-primary{
     background: #23830b;
 }
-img{
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
 
 .pagination>.active>a, 
 .pagination>.active>a:focus,
@@ -52,6 +55,7 @@ img{
     font-family: 'Lora', serif;
     font-weight: 400;
     font-size: 20px;
+    padding: 0px !important;
 }
 .date{
     color:green;
@@ -133,22 +137,23 @@ img{
 
 
 .footer{
-    
-    background: rgba(68, 167, 43, 0.70);
-   
-    
+   font-size: 12px;
+   color: grey;
+}
+.footer img{
+    width:50px;
+    height: auto;
+      display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 
 
-
-h1 {
-   
-    font-size: 48px;
-    font-weight: 400;
-    margin-left: 40px;
-    margin-bottom: 20px;
+.warning{
+    padding:15px;
 }
+
 
 .green{
     color: #23830b;
@@ -171,6 +176,10 @@ h1 {
     width: 100%;
     
     
+}
+#content{
+    min-height: 42vh;
+    max-height: 100%;
 }
 .main .hr-left{
     height:100px;
