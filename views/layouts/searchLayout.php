@@ -24,7 +24,7 @@
                 <div class="col-sm-12 col-md-12 head-nav">
    <ul class="nav nav-tabs">
   <li role="presentation"><a href="/">Home</a></li>
-  <li role="presentation"><a href="/search/">Search</a></li>
+  <li role="presentation" class="active"><a href="/search/">Search</a></li>
   <li role="presentation"><a href="/news/page/1">Archive   </a></li>
 </ul>    
                     </div>
@@ -91,13 +91,7 @@ with your questions, comments, and suggestions</p>
 
         <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
         <script src="/template/js/curl_hover.js"></script>
-        <script src="/template/js/trim.js"></script>
-        <script src="/template/js/set_current_navtab.js"></script>
-        <script src="/template/js/display_search_input.js"></script>
-        <script src="/template/js/navtabs_listener.js"></script>
         <script src="/template/js/keyup_event_on_search.js"></script>
-        <script src="/template/js/full_news_listener.js"></script>
-        <script src="/template/js/news_page_listener.js"></script>
       
         <script>
         $(document).ready(function() {
@@ -126,10 +120,7 @@ with your questions, comments, and suggestions</p>
            
          
            
-           setCurrentNavtab();  // detect and set "active" class to current navtab, navtabs are "home", "search", "archive"
-           displaySearch(location.pathname); // display search string only when  we on search page
-           
-               
+              
                
         });
     </script>
