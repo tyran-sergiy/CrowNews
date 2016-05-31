@@ -1,6 +1,5 @@
 <?php
 
-include_once ROOT.'/model/News.php';
 class SiteController {
    /**
     * Method which is called at the "/"  address

@@ -1,7 +1,5 @@
 <?php
 
-include ROOT.'/components/Pagination.php';
-include ROOT.'/model/News.php';
 
 class NewsController {
    
